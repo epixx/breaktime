@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Таймер для перерыва</title>
+    <link rel="stylesheet" href="css/jquery.countdown.css">
+    <style type="text/css">
+      html {
+        background-color: #000;
+      }
+      body {
+        font-size: 36px;
+      }
+      #defaultCountdown { 
+        text-align: center;
+        width: 240px; 
+        height: 90px; 
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background-color: #000;
+        color: #fff;
+        border: none;
+      }
+    </style>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.plugin.min.js"></script>
+    <script src="js/jquery.countdown.js"></script>
+    <script>
+    $(function () {
+    	var austDay = new Date();
+    	austDay = new Date(austDay.getFullYear() + 1, 1 - 1, 26);
+      $('#defaultCountdown').countdown({
+        until: '+10m',
+        compact: true,
+        format: 'MS', 
+        significant: 2, 
+        description: ''
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <div id="defaultCountdown"></div>
+  </body>
+</html>
